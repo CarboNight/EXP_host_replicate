@@ -1,5 +1,23 @@
 const textFile = './picnames.txt';
 const psFile = './ps.txt';
+const firebaseConfig = {
+
+  apiKey: "AIzaSyAnDQGSNjFVhBhqG7i0POJIvSWVhufs3eM",
+
+  authDomain: "rem-e3-replicate.firebaseapp.com",
+
+  projectId: "rem-e3-replicate",
+
+  storageBucket: "rem-e3-replicate.firebasestorage.app",
+
+  messagingSenderId: "431774377134",
+
+  appId: "1:431774377134:web:076fad87e2a6073e12b93f",
+
+  measurementId: "G-QZ4PK95MFZ"
+
+};
+
 
 let picnames = [];
 let oldids = [];

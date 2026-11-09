@@ -220,17 +220,19 @@ async function runExperiment( ) {
 
     const picnames_rand = JRR(picnames,1); 
 
-    const n_lists_singular = 10;//number of lists
+    const n_lists_singular = 9;//number of lists
     const n_itemInUnit_singular = 3; //3 items in each category. This haven't been converge this var to Int
     const n_itemInUnit_final_singular = n_itemInUnit_singular-1;//number
 
     const n_NumAllUnit_exceptOverlapInCurrentList_InUnitScale_perList_singular =  15;//15 units of pictures used current list
     const n_NumAllItem_exceptOverlapInCurrentList_InItemScale_perList_singular =  n_NumAllUnit_exceptOverlapInCurrentList_InUnitScale_perList_singular * n_itemInUnit_singular;//45 pictures used current list, regardless of from prior or not
     const n_imageStudyOrTest_perList_inUnitScale_singular = n_NumAllUnit_exceptOverlapInCurrentList_InUnitScale_perList_singular * (2/3); // 10 unit of tests or 10 unit of studies 
-    const n_imageStudyOrTest_perList_inItemScale_singular = n_imageStudyOrTest_perList_inUnitScale_singular*n_itemInUnit_singular; //30 tests or 30 studies
+    //const n_imageStudyOrTest_perList_inItemScale_singular = n_imageStudyOrTest_perList_inUnitScale_singular*n_itemInUnit_singular; //30 tests or 30 studies
+    // This variable used to have the assignment used above, but I don't understand why it was written that way instead of just setting it to 30.
+    const n_imageStudyOrTest_perList_inItemScale_singular = 30;
     // (portion) of item used in each category
     const finalTest_PortionItemUseInType_singular = 2/3; 
-    const n_howMuchMoreUnitSpecialForList1_inUnitScale_forFnn_forAll_singular = 3; //3 more units in list 1, and all that is from Fn;
+    const n_howMuchMoreUnitSpecialForList1_inUnitScale_forFnn_forAll_singular = 0; // This used to be 3 more units in list 1, and all that is from Fn. It was changed to have a consistent number of items in all lists.
 
 
     const num_digits_pres = 8; // present n digits each trial to fill 24s
@@ -2286,8 +2288,10 @@ if (is_inst_fullscreen) {
 
 timeline.push(initialTest_timeline);
 
-timeline.push(instructions_finaltest);
-timeline.push(finalTest_timeline);
+
+// These were removed because the final test was requested to be removed.
+//timeline.push(instructions_finaltest);
+//timeline.push(finalTest_timeline);
 timeline.push(surveyend,survey_HaveSeenImages,survey_detailSeenImages)//check this here
 timeline.push(exit_fullscreen,final_instruction);
 

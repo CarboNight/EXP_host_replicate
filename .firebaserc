@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "ctx-e3"
-  }
+    "default": "rem-e3-replicate"
+  },
+  "targets": {},
+  "etags": {}
 }
